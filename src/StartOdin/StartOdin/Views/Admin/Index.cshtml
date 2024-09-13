@@ -1,3 +1,4 @@
+@using StartOdin.Core.Database
 
 
 @{
@@ -6,5 +7,32 @@
 }
 
 <div class="container">
-    <h2>О фестивале</h2>
+    <h2 class="mt-4">О фестивале</h2>
+
+    <style>
+        .cards__container{
+            display: flex;
+            margin-top: 30px;
+        }
+        
+        
+    </style>
+    <div class="cards__container">
+        <div class="card" style="width: 18rem; margin-right: 10px">
+            <div class="card-body">
+                <h5 class="card-title">@DatabaseController.GetInstance().Participants.Count()</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Количество участников</h6>
+                <p class="card-text">Информация о количестве зарегистрированных команд в системе</p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@DatabaseController.GetInstance().Teams.Count()</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Количество команд</h6>
+                <p class="card-text">Информация о количестве зарегистрированных пользователей в системе</p>
+            </div>
+        </div>
+    </div>
+    
 </div>

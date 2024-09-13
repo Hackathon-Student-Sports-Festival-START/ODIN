@@ -135,3 +135,83 @@ button{
 button:hover{
     opacity: 80%;
 }
+
+.auth__block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#authIcon{
+    margin-right: 10px;
+}
+
+.cards__container{
+    display: flex;
+    margin-top: 35px;
+}
+
+.container__section{
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+.net{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.partner__section{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+    
+}
+
+.partner__container{
+    display: flex;
+    max-width: 1280px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.partner__container h2{
+    color: var(--accent-color);
+    margin-bottom: 30px;
+}
+
+.partners__cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.partner__card{
+    width: 230px;
+    height: 60px;
+    margin-right: 45px;
+    margin-bottom: 20px;
+}
+
+.medals__section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.medals__container{
+    width: 100%;
+    max-width: 1280px;
+}

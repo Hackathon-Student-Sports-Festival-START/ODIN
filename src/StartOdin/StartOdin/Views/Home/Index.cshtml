@@ -1,28 +1,254 @@
-﻿@{
+﻿@using StartOdin.Core.Database
+@{
     Layout = "Layouts/_Layout";
 }
 
 <div class="banner">
-    <img src="/logo-banner.png" alt="Описание изображения" class="banner-image">
+    <img src="~/assets/logo-banner.png" alt="Описание изображения" class="banner-image">
     <h1 class="banner-text">Крутая платформа для платформы</h1>
 </div>
-<section class="news-feed">
-    
-    <!-- Блоки новостей -->
-    <article class="news-item">
-        <img class="news-img" src="https://via.placeholder.com/300" alt="Новости 1">
-        <div class="text-block">
-            <h2>Заголовок новости 1</h2>
-            <p>Краткое описание новости 1. Тут может быть текст о чем идет речь в новости.</p>
-        </div>
-    </article>
 
 
-    <article class="news-item">
-        <img class="news-img" src="https://via.placeholder.com/300" alt="Новости 1">
-        <div class="text-block">
-            <h2>Заголовок новости 1</h2>
-            <p>Краткое описание новости 1. Тут может быть текст о чем идет речь в новости.</p>
-        </div>
-    </article>
+
+<section id="news-feed" class="news-feed">
+    <h2>Новости</h2>
+    @{
+        foreach (var news in DatabaseController.GetInstance().News.ToList())
+        {
+            <!-- Блоки новостей -->
+            <article class="news-item">
+                <img class="news-img" src="https://via.placeholder.com/300" alt="Новости 1">
+                <div class="text-block">
+                    <h2>@news.Title</h2>
+                    <p>@news.Content</p>
+                </div>
+            </article>
+        }   
+    }
 </section>
+
+<section class="medals__section">
+    <div class="medals__container">
+        <div class="header__container mb-4">
+            <h2>Таблица зачета</h2>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Команда</th>
+                    <th class="gold">Золото🥇</th>
+                    <th class="silver">Серебро🥈</th>
+                    <th class="bronze">Бронза🥉</th>
+                    <th>Всего медалей🎖️</th>
+                </tr>
+                </thead>
+                <tbody>
+                @{
+                    foreach (var team in DatabaseController.GetInstance().Teams.ToList())
+                    {
+                        <tr>
+                            <td>@team.Name</td>
+                            <td>@team.GoldMedals</td>
+                            <td>@team.SilverMedals</td>
+                            <td>@team.BronzeMedals</td>
+                            <td>@(team.GoldMedals + team.SilverMedals + team.BronzeMedals)</td>
+                        </tr>
+                    }
+                }
+                
+                <!-- Добавьте дополнительные строки по мере необходимости -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+<section class="net">
+    <div class="container__section">
+        <h1 style="margin-top: 20px; margin-left: 20px">Турнирная сетка</h1>
+        <div class="theme theme-dark">
+            <div class="bracket disable-image">
+                <div class="column one">
+                    <div class="match winner-top">
+                        <div class="match-top team">
+                            <span class="image"></span>
+                            <span class="seed">1</span>
+                            <span class="name">Orlando Jetsetters</span>
+                            <span class="score">2</span>
+                        </div>
+                        <div class="match-bottom team">
+                            <span class="image"></span>
+                            <span class="seed">8</span>
+                            <span class="name">D.C. Senators</span>
+                            <span class="score">1</span>
+                        </div>
+                        <div class="match-lines">
+                            <div class="line one"></div>
+                            <div class="line two"></div>
+                        </div>
+                        <div class="match-lines alt">
+                            <div class="line one"></div>
+                        </div>
+                    </div>
+                    <div class="match winner-bottom">
+                        <div class="match-top team">
+                            <span class="image"></span>
+                            <span class="seed">4</span>
+                            <span class="name">New Orleans Rockstars</span>
+                            <span class="score">1</span>
+                        </div>
+                        <div class="match-bottom team">
+                            <span class="image"></span>
+                            <span class="seed">5</span>
+                            <span class="name">West Virginia Runners</span>
+                            <span class="score">2</span>
+                        </div>
+                        <div class="match-lines">
+                            <div class="line one"></div>
+                            <div class="line two"></div>
+                        </div>
+                        <div class="match-lines alt">
+                            <div class="line one"></div>
+                        </div>
+                    </div>
+                    <div class="match winner-top">
+                        <div class="match-top team">
+                            <span class="image"></span>
+                            <span class="seed">2</span>
+                            <span class="name">Denver Demon Horses</span>
+                            <span class="score">2</span>
+                        </div>
+                        <div class="match-bottom team">
+                            <span class="image"></span>
+                            <span class="seed">7</span>
+                            <span class="name">Chicago Pistons</span>
+                            <span class="score">0</span>
+                        </div>
+                        <div class="match-lines">
+                            <div class="line one"></div>
+                            <div class="line two"></div>
+                        </div>
+                        <div class="match-lines alt">
+                            <div class="line one"></div>
+                        </div>
+                    </div>
+                    <div class="match winner-top">
+                        <div class="match-top team">
+                            <span class="image"></span>
+                            <span class="seed">3</span>
+                            <span class="name">San Francisco Porters</span>
+                            <span class="score">2</span>
+                        </div>
+                        <div class="match-bottom team">
+                            <span class="image"></span>
+                            <span class="seed">6</span>
+                            <span class="name">Seattle Climbers</span>
+                            <span class="score">1</span>
+                        </div>
+                        <div class="match-lines">
+                            <div class="line one"></div>
+                            <div class="line two"></div>
+                        </div>
+                        <div class="match-lines alt">
+                            <div class="line one"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column two">
+                    <div class="match winner-bottom">
+                        <div class="match-top team">
+                            <span class="image"></span>
+                            <span class="seed">1</span>
+                            <span class="name">Orlando Jetsetters</span>
+                            <span class="score">1</span>
+                        </div>
+                        <div class="match-bottom team">
+                            <span class="image"></span>
+                            <span class="seed">5</span>
+                            <span class="name">West Virginia Runners</span>
+                            <span class="score">2</span>
+                        </div>
+                        <div class="match-lines">
+                            <div class="line one"></div>
+                            <div class="line two"></div>
+                        </div>
+                        <div class="match-lines alt">
+                            <div class="line one"></div>
+                        </div>
+                    </div>
+                    <div class="match winner-bottom">
+                        <div class="match-top team">
+                            <span class="image"></span>
+                            <span class="seed">2</span>
+                            <span class="name">Denver Demon Horses</span>
+                            <span class="score">1</span>
+                        </div>
+                        <div class="match-bottom team">
+                            <span class="image"></span>
+                            <span class="seed">3</span>
+                            <span class="name">San Francisco Porters</span>
+                            <span class="score">2</span>
+                        </div>
+                        <div class="match-lines">
+                            <div class="line one"></div>
+                            <div class="line two"></div>
+                        </div>
+                        <div class="match-lines alt">
+                            <div class="line one"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column three">
+                    <div class="match winner-top">
+                        <div class="match-top team">
+                            <span class="image"></span>
+                            <span class="seed">5</span>
+                            <span class="name">West Virginia Runners</span>
+                            <span class="score">3</span>
+                        </div>
+                        <div class="match-bottom team">
+                            <span class="image"></span>
+                            <span class="seed">3</span>
+                            <span class="name">San Francisco Porters</span>
+                            <span class="score">2</span>
+                        </div>
+                        <div class="match-lines">
+                            <div class="line one"></div>
+                            <div class="line two"></div>
+                        </div>
+                        <div class="match-lines alt">
+                            <div class="line one"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="partner__section">
+    <div class="partner__container">
+        <h2 >Партнеры Фестиваля</h2>
+        
+        <div class="partners__cards">
+            <div class="partner__card">
+                <a href="https://synergy.ru/">
+                    <img src="~/assets/partners/logosyn.svg" alt="">
+                </a>
+            </div>
+
+            <div class="partner__card">
+                <a href="https://fsp-russia.com">
+                    <img src="~/assets/partners/logo_head.svg" alt="">
+                </a>
+            </div>
+
+            
+        </div>
+        
+    </div>
+    
+</section>
+

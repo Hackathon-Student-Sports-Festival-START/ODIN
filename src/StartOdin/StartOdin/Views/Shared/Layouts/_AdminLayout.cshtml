@@ -1,7 +1,3 @@
-@{
-    
-}
-
 <!doctype html>
 <html lang="ru">
 <head>
@@ -11,13 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Панель администратора - @ViewBag.Title</title>
     <link rel="stylesheet" href="~/css/base.css">
+    <link rel="stylesheet" href="~/css/net.css" asp-append-version="true">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
-            <a class="navbar-brand" asp-action="Index" asp-controller="Admin">
+            <a class="navbar-brand" asp-action="Index" asp-controller="Home">
                 <span class="logo">
                     <img src="~/assets/logo.svg" alt="logo">
                 </span>
@@ -25,6 +22,7 @@
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <nav class="nav">
+                    <a class="nav-link" asp-action="Index" asp-controller="Admin">О фестивале</a>
                     <a class="nav-link" asp-action="Participants" asp-controller="Admin">Участники</a>
                     <a class="nav-link" asp-action="Teams" asp-controller="Admin">Команды</a>
                     <a class="nav-link" asp-action="Games" asp-controller="Admin">Игры</a>
@@ -37,8 +35,6 @@
 <main>
     @RenderBody()
 </main>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

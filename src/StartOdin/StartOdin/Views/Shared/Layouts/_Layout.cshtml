@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="~/css/layout/index.css" asp-append-version="true">
     <link rel="stylesheet" href="~/css/base.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/net.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/medals.css" asp-append-version="true">
 </head>
 <body>
 <header>
@@ -20,15 +22,33 @@
     <div class="menu-icon" id="menu-toggle">&#9776;</div>
     <nav id="navbar">
         <ul>
-            <li><a href="#">Главная</a></li>
-            <li><a asp-action="Index" asp-controller="Home" asp-fragment="news__feed">Новости</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a asp-action="Index" asp-controller="Home">Главная</a></li>
+            <li><a asp-action="Index" asp-controller="Home" asp-fragment="news-feed">Новости</a></li>
+            <li><a asp-action="Index" asp-controller="Admin">Панель администратора</a></li>
             <li><a href="#">О нас</a></li>
         </ul>
         <div class="account-icon">
-            <a asp-controller="Auth" asp-action="Login" title="Личный кабинет">
-                <img src="/profile.svg" alt="Иконка Личного кабинета">
-            </a>
+            @{
+                if (!User.Identity.IsAuthenticated)
+                {
+                    <a asp-controller="Auth" asp-action="Login" title="Личный кабинет">
+                        Войти в личный кабинет
+                    </a>
+                }
+                else
+                {
+            <div class="auth__block">
+                <a asp-controller="PersonalAccount" asp-action="Index" title="Личный кабинет" id="authIcon">
+                    <img src="~/assets/profile.svg" alt="Иконка Личного кабинета">
+                </a>
+                <a asp-controller="Auth" asp-action="Logout" title="Личный кабинет">
+                    Выйти
+                </a>
+            </div>
+                   
+                }
+            }
+           
         </div>
     </nav>
 </header>

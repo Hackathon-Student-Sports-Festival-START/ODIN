@@ -34,6 +34,8 @@ public class DatabaseController : DbContext
     /// </summary>
     public DbSet<Team> Teams { get; set; }
     
+    public DbSet<News> News { get; set; }
+    
     #endregion
     
     #region Constructor
