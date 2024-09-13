@@ -1,6 +1,43 @@
+@model StartOdin.Domain.ViewModels.Auth.LoginViewModel
+
 @{
-    ViewBag.Title = "Авторизация пользователя";
+    ViewBag.Title = "Авторизация";
     Layout = "Layouts/_AuthLayout";
 }
 
-<h2>Авторизация</h2>
+<div class="auth__container">
+    <div class="form__header">
+        <div class="logo">
+            <img src="~/assets/logo.svg" alt="Логотип организации">
+        </div>
+        <a asp-action="Index" asp-controller="Home">На главную</a>
+    </div>
+
+
+    <h1>Войти в систему</h1>
+
+    <form asp-action="Register" asp-controller="Auth" method="post">
+        <!-- Электронная почта -->
+        <div class="input__container" style="margin-top: 40px">
+            <label for="email">Электронная почта</label>
+            <input type="email" id="email" asp-for="Email">
+        </div>
+        
+        <!-- Пароль участника -->
+        <div class="input__container">
+            <label for="password">Введите пароль</label>
+            <input type="password" id="password" asp-for="Password">
+        </div>
+
+
+        <!-- Согласен с правилами проведения -->
+        <div style="margin-top: 30px">
+            <input type="checkbox" id="agree" asp-for="RememberMe">
+            <label for="">Запомнить меня в будущем</label>
+        </div>
+        <div class="button__container">
+            <button >Зарегистрироваться</button>
+        </div>
+
+    </form>
+</div>

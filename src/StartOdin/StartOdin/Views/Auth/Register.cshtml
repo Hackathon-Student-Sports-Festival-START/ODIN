@@ -1,6 +1,89 @@
+@using StartOdin.Domain.ViewModels.Auth
+@model RegisterViewModel
+
 @{
     ViewBag.Title = "Регистрация пользователя";
-    Layout = "Layouts/_Layout";
+    Layout = "Layouts/_AuthLayout";
 }
 
-<h2>Регистрация пользователя в системе</h2>
+
+<div class="auth__container">
+    <div class="form__header">
+        <div class="logo">
+            <img src="~/assets/logo.svg" alt="Логотип организации">
+        </div>
+        <a asp-action="Index" asp-controller="Home">На главную</a>
+    </div>
+    
+
+    <h1>Регистрация участника</h1>
+
+    <form asp-action="Register" asp-controller="Auth" method="post">
+        <!-- Электронная почта -->
+        <div class="input__container" style="margin-top: 40px">
+            <label for="email">Электронная почта</label>
+            <input type="email" id="email" asp-for="Email">
+        </div>
+
+        <!-- Имя участника -->
+        <div class="input__container">
+            <label for="firstName">Имя участника</label>
+            <input type="text" id="firstName" asp-for="FirstName">
+        </div>
+
+        <!-- Фамилия участника -->
+        <div class="input__container">
+            <label for="lastName">Фамилия участника</label>
+            <input type="text" id="lastName" asp-for="LastName">
+        </div>
+
+        <!-- Фамилия участника -->
+        <div class="input__container">
+            <label for="dateOfBirth">Дата рождения</label>
+            <input type="date" id="dateOfBirth" asp-for="DateOfBirth">
+        </div>
+
+        <!-- Университет участника -->
+        <div class="input__container">
+            <label for="university">Образовательное учреждение</label>
+            <input type="text" id="university" asp-for="University">
+        </div>
+
+        <hr class="solid">
+        
+        <!-- Роль участника -->
+        <div class="input__container">
+            <label for="role">Моя роль</label>
+            <select type="text" id="role" asp-for="Role">
+                <option value="Capitan">Капитан</option>
+                <option value="Participant">Участник</option>
+                <option value="Trainer">Тренер</option>
+            </select>
+        </div>
+
+        <!-- Команда участника -->
+        <div class="input__container">
+            <label for="TeamName">Название команды</label>
+            <input type="text" id="TeamName" asp-for="TeamName">
+        </div>
+
+        <hr class="solid">
+        
+        <!-- Пароль участника -->
+        <div class="input__container">
+            <label for="password">Введите пароль</label>
+            <input type="password" id="password" asp-for="Password">
+        </div>
+
+        
+        <!-- Согласен с правилами проведения -->
+        <div style="margin-top: 30px">
+            <input type="checkbox" id="agree" asp-for="IsAgreeWithTerms">
+            <label for="">Я согласен(-на) с правилами проведения Фестиваля</label>    
+        </div>
+        <div class="button__container">
+            <button >Зарегистрироваться</button>
+        </div>
+
+    </form>
+</div>
