@@ -1,5 +1,9 @@
 .auth__layout__section{
     background-color: #fff;
     background-size: cover;
-    
+    background-repeat: repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
