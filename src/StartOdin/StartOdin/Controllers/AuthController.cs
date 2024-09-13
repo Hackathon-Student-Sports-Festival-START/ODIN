@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StartOdin.Core.Database;
 using StartOdin.Core.Helpers;
+using StartOdin.Domain.Entities;
 using StartOdin.Domain.Entities.Users;
 using StartOdin.Domain.ViewModels.Auth;
 
@@ -61,6 +62,24 @@ public class AuthController : Controller
                 return View(model);
             }
 
+            var team = await DatabaseController.GetInstance().Teams.FirstOrDefaultAsync(x => x.Name == model.TeamName);
+
+            if (team == null)
+            {
+                if (model.Role == "Captain")
+                {
+                    DatabaseController.GetInstance().Teams.Add(new Team()
+                    {
+                        Name = model.TeamName,
+                    });
+                    await DatabaseController.GetInstance().SaveChangesAsync();
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Ваша команда не зарегистрирована. Регистрировать команду может только капитан");
+                }
+            }
+            
             var participant = new Participant()
             {
                 FirstName = model.FirstName,
@@ -143,6 +162,7 @@ public class AuthController : Controller
             var claims = new List<Claim>()
             {
                 new (ClaimTypes.Email, user.Email),
+                new (ClaimTypes.Role, user.Role),
                 new (ClaimTypes.Sid, user.Id.ToString()),
                 new (ClaimTypes.Name, user.FirstName),
                 new (ClaimTypes.Surname, user.LastName),
@@ -160,6 +180,11 @@ public class AuthController : Controller
             // Основной метод регистрации пользователя в системе
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimIdentity), authProperties);
+
+            if (user.Role == "Admin")
+            {
+                return RedirectToAction("Index", "Admin");
+            }
             
             // Отправялем пользователя на главную страницу
             return RedirectToAction("Index", "Home");

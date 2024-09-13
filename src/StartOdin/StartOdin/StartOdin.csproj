@@ -9,6 +9,7 @@
     <ItemGroup>
       <Folder Include="Models\" />
       <Folder Include="wwwroot\assets\bg\" />
+      <Folder Include="wwwroot\assets\images\" />
       <Folder Include="wwwroot\fonts\" />
     </ItemGroup>
 

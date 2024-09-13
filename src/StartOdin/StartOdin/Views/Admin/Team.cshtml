@@ -1,0 +1,75 @@
+@using StartOdin.Core.Database
+@using StartOdin.Domain.Entities.Users
+@model StartOdin.Domain.Entities.Team
+@{
+    ViewBag.Title = "Команда - ";
+    Layout = "Layouts/_AdminLayout";
+}
+
+
+<div class="container">
+    <form asp-action="Team" asp-controller="Admin">
+        <style>
+            a{
+                text-decoration: none;
+                color: gray;
+            }
+        </style>
+        <div class="mt-4">
+            <a class="" asp-action="Participants" asp-controller="Admin">Вернуться обратно</a>
+        </div>
+        
+        
+        <h2 class="">Команда @Model.Name</h2>
+        
+        <label for="">Название команды</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" asp-for="Name" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <label for="">Лозунг - описание</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" asp-for="Description" placeholder="Описание команды" aria-label="Description" aria-describedby="basic-addon1">
+        </div>
+
+
+        <label for="">Дисциплина</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" asp-for="Discipline" placeholder="Дисциплина" aria-label="Description" aria-describedby="basic-addon1">
+        </div>
+        
+        
+        @{
+            var count = DatabaseController.GetInstance().Participants.Where(x => x.TeamName == Model.Name).Count();
+            Model.MembersCount = count;
+        }
+        <label for="">Число участников</label>
+        <div class="input-group mb-3">
+            <input type="number" class="form-control" asp-for="MembersCount" placeholder="Число участников" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <label for="">Количество золотых медалей</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" asp-for="GoldMedals" placeholder="Количество золотых медалей" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <label for="">Количество серебряных медалей</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" asp-for="SilverMedals" placeholder="Количество серебряных медалей" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <label for="">Количество бронзовых медалей</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" asp-for="BronzeMedals" placeholder="Количество бронзовых медалей" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <button type="submit" class="btn btn-success">Сохранить изменения</button>
+        <a class="btn btn-danger" asp-controller="Admin" asp-action="DeleteParticipant" asp-route-id="@Model.Id">Удалить команду</a>
+        <a class="btn btn-info" asp-controller="Admin" asp-action="Teams" >Вернуться назад</a>
+        
+    </form>
+    
+
+    
+
+</div>

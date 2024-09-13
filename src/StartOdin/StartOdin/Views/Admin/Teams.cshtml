@@ -1,0 +1,45 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using StartOdin.Core.Database
+
+
+@{
+    ViewBag.Title = "title";
+    Layout = "Layouts/_AdminLayout";
+}
+
+<div class="container">
+    <h2 class="mt-4">Команды</h2>
+    
+    <table class="table table-striped mt-4">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Название команды</th>
+            <th scope="col">Количество участников</th>
+            <th scope="col">Дисциплина</th>
+            <th scope="col">Золотых медалей</th>
+            <th scope="col">Серебрянных медалей</th>
+            <th scope="col">Бронзовых медалей</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in DatabaseController.GetInstance().Teams.ToList())
+        {
+        <tr>
+            <th scope="row">@item.Id</th>
+            <td>
+                <a asp-action="Team" asp-controller="Admin" asp-route-id="@item.Id">
+                    @item.Name
+                </a>
+            </td>
+            <td>@item.MembersCount</td>
+            <td>@item.Discipline</td>
+            <td>@item.GoldMedals</td>
+            <td>@item.SilverMedals</td>
+            <td>@item.BronzeMedals</td>
+        </tr>
+        }
+
+        </tbody>
+    </table>
+</div>

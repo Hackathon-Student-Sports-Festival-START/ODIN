@@ -1,0 +1,62 @@
+@model StartOdin.Domain.Entities.Users.Participant
+
+@{
+    ViewBag.Title = "title";
+    Layout = "Layouts/_AdminLayout";
+}
+
+<div class="container-sm mt-lg-5">
+    
+    <form asp-action="Team" asp-controller="Admin" method="post">
+
+        <style>
+            a{
+                text-decoration: none;
+                color: gray;
+            }
+        </style>
+        
+        <a asp-action="Participants" asp-controller="Admin">Вернуться обратно</a>
+        <h2 class="mb-4">@Model.FirstName @Model.LastName</h2>
+
+        <label for="">Telegram ID</label>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">@@</span>
+            <input type="text" class="form-control" asp-for="TelegramId" placeholder="Telegram ID" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        
+        <label for="">Электронная почта</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" asp-for="Email" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <label for="">Номер телефона</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" asp-for="Phone" placeholder="Номер телефона" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <label for="">Команда участника</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" asp-for="TeamName" placeholder="Команда участника" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <label for="">Роль</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" asp-for="Role" placeholder="Команда участника" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <label for="">Место обучения</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" asp-for="University" placeholder="Команда участника" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <button type="submit" class="btn btn-success">Сохранить изменения</button>
+        <a class="btn btn-danger" asp-controller="Admin" asp-action="DeleteParticipant" asp-route-id="@Model.Id">Удалить участника</a>
+        <a class="btn btn-info" asp-controller="Admin" asp-action="Teams" >Вернуться назад</a>
+        
+    </form>
+
+
+</div>
+
+

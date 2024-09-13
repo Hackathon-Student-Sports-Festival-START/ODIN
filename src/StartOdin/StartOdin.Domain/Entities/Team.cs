@@ -29,4 +29,24 @@ public class Team
     /// Дисциплина по которой выступает команда
     /// </summary>
     public string? Discipline {get; set;}
+    
+    /// <summary>
+    /// Количество участников команды
+    /// </summary>
+    public int? MembersCount {get; set;}
+    
+    /// <summary>
+    /// Золотые медали
+    /// </summary>
+    public int? GoldMedals { get; set; }
+    
+    /// <summary>
+    /// Серебрянные медали
+    /// </summary>
+    public int? SilverMedals { get; set; }
+    
+    /// <summary>
+    /// Бронзовые медали
+    /// </summary>
+    public int? BronzeMedals { get; set; }
 }

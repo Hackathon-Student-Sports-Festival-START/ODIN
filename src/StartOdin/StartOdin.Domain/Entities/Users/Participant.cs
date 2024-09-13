@@ -58,4 +58,5 @@ public class Participant
     /// Дата рождения участника
     /// </summary>
     public DateTime DateOfBirth { get; set; }
+    
 }

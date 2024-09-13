@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using StartOdin.Domain.Entities;
 using StartOdin.Domain.Entities.Users;
 
 namespace StartOdin.Core.Database;
@@ -26,12 +27,12 @@ public class DatabaseController : DbContext
     /// <summary>
     /// Все участники фестиваля
     /// </summary>
-    public DbSet<Participant> Participants { get; set; }
+    public DbSet<Participant?> Participants { get; set; }
     
     /// <summary>
     /// Все зарегистрированные команды
     /// </summary>
-    public DbSet<Participant> Teams { get; set; }
+    public DbSet<Team> Teams { get; set; }
     
     #endregion
     
@@ -40,7 +41,7 @@ public class DatabaseController : DbContext
     private DatabaseController()
     {
 #if DEBUG
-        Database.EnsureDeleted();
+        // Database.EnsureDeleted();
         Database.EnsureCreated();
 #endif
 #if !DEBUG

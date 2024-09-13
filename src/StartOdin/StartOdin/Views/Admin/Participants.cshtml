@@ -1,0 +1,38 @@
+@using StartOdin.Core.Database
+@{
+    ViewBag.Title = "Участники";
+    Layout = "Layouts/_AdminLayout";
+}
+
+<div class="container">
+    <h2 class="mt-3">Участники</h2>
+    
+    <table class="table table-striped mt-4">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Имя</th>
+            <th scope="col">Фамилия</th>
+            <th scope="col">Команда</th>
+            <th scope="col">Университет</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in DatabaseController.GetInstance().Participants.ToList())
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>
+                    <a asp-action="Participant" asp-controller="Admin" asp-route-id="@item.Id">
+                        @item.FirstName
+                    </a>
+                </td>
+                <td>@item.LastName</td>
+                <td>@item.TeamName</td>
+                <td>@item.University</td>
+            </tr>
+        }
+        
+        </tbody>
+    </table>
+</div>

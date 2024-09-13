@@ -7,10 +7,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-    {
-        options.LoginPath = "/auth/login";
-    });
+    .AddCookie();
 
 var app = builder.Build();
 
@@ -25,12 +22,12 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseAuthentication();
 app.UseRouting();
+
 
 app.UseAuthorization();
 app.UseAuthentication();
-
-
 
 app.MapControllerRoute(
     name: "default",

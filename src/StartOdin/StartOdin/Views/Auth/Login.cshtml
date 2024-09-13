@@ -14,7 +14,7 @@
     </div>
 
 
-    <h1>Войти в систему</h1>
+    <h1>Войти в аккаунт</h1>
 
     <form asp-action="Login" asp-controller="Auth" method="post">
         <!-- Электронная почта -->
@@ -38,8 +38,12 @@
 
         <div asp-validation-summary="ModelOnly" style="color: red; text-decoration: none"></div>
         <div class="button__container">
-            <button >Войти</button>
+            <button>Войти</button>
         </div>
+
+        <a asp-action="Register" asp-controller="Auth" style="margin-top: 30px">
+            У меня нет аккаунта?
+        </a>
 
     </form>
 </div>

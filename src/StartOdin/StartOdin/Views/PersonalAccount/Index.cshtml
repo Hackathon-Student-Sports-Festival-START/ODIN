@@ -1,0 +1,22 @@
+
+@{
+    ViewBag.Title = "title";
+    Layout = "Layouts/_PersonalAccountLayout";
+}
+
+
+<!-- Баннер при входе в личный кабинет -->
+<div class="container">
+
+    <style>
+        .cabinet__banner{
+            background-image: url("@Url.Content("~/assets/images/banner_instalation.svg")");
+        }
+    </style>
+    
+    <div class="cabinet__banner">
+        <img src="~/assets/images/banner.png" alt="Дерутся мальчики">
+    </div>
+    
+    <h2>Личный кабинет</h2>
+</div>
