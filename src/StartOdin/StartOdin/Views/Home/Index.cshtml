@@ -2,7 +2,84 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СТАРТ x МГИМО</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mazzard+H:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="logo-img" src="/main-logo.png" alt="">              
+        </div>
+        <div class="menu-icon" id="menu-toggle">&#9776;</div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">О нас</a></li>
+            </ul>
+            <div class="account-icon">
+                <a href="#" title="Личный кабинет">
+                    <img src="/profile.svg" alt="Иконка Личного кабинета">
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="banner">
+            <img src="/logo-banner.png" alt="Описание изображения" class="banner-image">
+            <h1 class="banner-text">Крутая платформа для платформы</h1>
+        </div>
+
+        <section class="news-feed">
+            <!-- Блоки новостей -->
+            <article class="news-item">
+                <img class="news-img" src="https://via.placeholder.com/300" alt="Новости 1">
+                <div class="text-block">
+                    <h2>Заголовок новости 1</h2>
+                    <p>Краткое описание новости 1. Тут может быть текст о чем идет речь в новости.</p>
+                </div>
+            </article>
+            <!-- Добавьте остальные новостные блоки аналогично -->
+            <article class="news-item">
+                <img class="news-img" src="https://via.placeholder.com/300" alt="Новости 1">
+                <div class="text-block">
+                    <h2>Заголовок новости 1</h2>
+                    <p>Краткое описание новости 1. Тут может быть текст о чем идет речь в новости.</p>
+                </div>
+            </article>
+
+            <article class="news-item">
+                <img class="news-img" src="https://via.placeholder.com/300" alt="Новости 1">
+                <div class="text-block">
+                    <h2>Заголовок новости 1</h2>
+                    <p>Краткое описание новости 1. Тут может быть текст о чем идет речь в новости.</p>
+                </div>                
+            </article>
+
+            <article class="news-item">
+                <img class="news-img" src="https://via.placeholder.com/300" alt="Новости 1">
+                <div class="text-block">
+                    <h2>Заголовок новости 1</h2>
+                    <p>Краткое описание новости 1. Тут может быть текст о чем идет речь в новости.</p>
+                </div>
+            </article>
+
+            <article class="news-item">
+                <img class="news-img" src="https://via.placeholder.com/300" alt="Новости 1">
+                <div class="text-block">
+                    <h2>Заголовок новости 1</h2>
+                    <p>Краткое описание новости 1. Тут может быть текст о чем идет речь в новости.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
