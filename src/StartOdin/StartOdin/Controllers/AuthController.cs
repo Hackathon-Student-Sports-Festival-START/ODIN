@@ -22,10 +22,7 @@ public class AuthController : Controller
     [HttpGet]
     public IActionResult Register()
     {
-        if (User.Identity.IsAuthenticated)
-        {
-            return RedirectToAction("Index", "Home");
-        }
+        
         return View();
         
     }
@@ -37,10 +34,7 @@ public class AuthController : Controller
     [HttpGet]
     public IActionResult Login()
     {
-        if (User.Identity.IsAuthenticated)
-        {
-            return RedirectToAction("Index", "Home");
-        }
+        
         return View();
     }
 
