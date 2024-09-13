@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Mazzard';
+    src: local('Mazzard H Regular'), local('MazzardM-Medium'),
+    url('../fonts/MazzardH-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Mazzard Bold';
+    src: local('Mazzard H Bold'), local('MazzardM-Medium'),
+    url('../fonts/MazzardH-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Mazzard Black';
+    src: local('Mazzard H Black'), local('MazzardM-Medium'),
+    url('../fonts/MazzardH-Black.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Mazzard Thin';
+    src: local('Mazzard H Thin'), local('MazzardM-Medium'),
+    url('../fonts/MazzardH-Thin.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Druk Text Wide Cyr';
+    src: local('Druk Text Wide Cyr'), local('DrukTextWideCyr'),
+    url('../fonts/Druk Wide Medium.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root{
+    --accent-color: #FF0000;
+}
+body{
+    font-family: 'Mazzard', sans-serif;
+    background-color: #f5f5f5;
+    font-size: 16px;
+}
+
+h1{
+    font-size: 24px;
+    font-family: 'Druk Text Wide Cyr', sans-serif;
+}

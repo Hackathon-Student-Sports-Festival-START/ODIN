@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartOdin", "StartOdin\StartOdin.csproj", "{0CE02232-859F-4176-BEBF-E4C29F8370E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartOdin.Domain", "StartOdin.Domain\StartOdin.Domain.csproj", "{B01FB9F7-2713-4CEC-B657-E1BD294BFD90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{0CE02232-859F-4176-BEBF-E4C29F8370E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CE02232-859F-4176-BEBF-E4C29F8370E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CE02232-859F-4176-BEBF-E4C29F8370E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B01FB9F7-2713-4CEC-B657-E1BD294BFD90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B01FB9F7-2713-4CEC-B657-E1BD294BFD90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B01FB9F7-2713-4CEC-B657-E1BD294BFD90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B01FB9F7-2713-4CEC-B657-E1BD294BFD90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

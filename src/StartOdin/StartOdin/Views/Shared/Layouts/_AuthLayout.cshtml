@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- CSS-->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    
+    <link rel="stylesheet" href="~/css/base.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/auth.css" asp-append-version="true"/>
+    
+    <title>Фестиваль "СТАРТ" - @ViewData["Title"]</title>
+</head>
+<body>
+<header>
+    <div class="container">
+        
+    </div>
+</header>
+<style>
+    .auth__layout__section {
+        background-color: #fff;
+    }
+</style>
+
+<section class="auth__layout__section">
+    <main>
+        @RenderBody()
+    </main>
+</section>
+
+</body>
+</html>
+
