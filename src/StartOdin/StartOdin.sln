@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartOdin", "StartOdin\Star
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartOdin.Domain", "StartOdin.Domain\StartOdin.Domain.csproj", "{B01FB9F7-2713-4CEC-B657-E1BD294BFD90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartOdin.Core", "StartOdin.Core\StartOdin.Core.csproj", "{FA0930D3-DCCE-41CB-A61D-1BBE9CD73C38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{F27CEF94-DB20-4BAA-9385-7A34C427E729}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{B01FB9F7-2713-4CEC-B657-E1BD294BFD90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B01FB9F7-2713-4CEC-B657-E1BD294BFD90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B01FB9F7-2713-4CEC-B657-E1BD294BFD90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA0930D3-DCCE-41CB-A61D-1BBE9CD73C38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA0930D3-DCCE-41CB-A61D-1BBE9CD73C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA0930D3-DCCE-41CB-A61D-1BBE9CD73C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA0930D3-DCCE-41CB-A61D-1BBE9CD73C38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F27CEF94-DB20-4BAA-9385-7A34C427E729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27CEF94-DB20-4BAA-9385-7A34C427E729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27CEF94-DB20-4BAA-9385-7A34C427E729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27CEF94-DB20-4BAA-9385-7A34C427E729}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

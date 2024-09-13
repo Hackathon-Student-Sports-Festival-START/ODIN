@@ -12,13 +12,13 @@ public class RegisterViewModel
     public string? LastName { get; set; }
     
     [Required]
-    public DateTime? DateOfBirth { get; set; }
+    public DateTime DateOfBirth { get; set; }
     
     [Required]
     public string? Role { get; set; }
     
     [Required]
-    public int TeamName { get; set; }
+    public string? TeamName { get; set; }
     
     [Required]
     public string? University { get; set; }

@@ -92,6 +92,10 @@ select{
     height: 30px;
 }
 
+.logo{
+    maring-right: 10px;
+}
+
 a{
     text-decoration: none;
     color: var(--link-nonactive);
@@ -110,6 +114,10 @@ hr.solid{
     display: flex;
     margin-top: 15px;
     justify-content: flex-end;
+}
+
+form{
+    width: 100%;
 }
 
 button{

@@ -35,8 +35,10 @@
             <input type="checkbox" id="agree" asp-for="RememberMe">
             <label for="">Запомнить меня в будущем</label>
         </div>
+
+        <div asp-validation-summary="ModelOnly" style="color: red; text-decoration: none"></div>
         <div class="button__container">
-            <button >Зарегистрироваться</button>
+            <button >Войти</button>
         </div>
 
     </form>

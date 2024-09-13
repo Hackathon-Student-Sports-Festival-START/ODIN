@@ -37,11 +37,25 @@ public class Participant
     /// <summary>
     /// Идентификатор команды пользователя
     /// </summary>
-    public int TeamId { get; set; }
+    public string? TeamName { get; set; }
     
     /// <summary>
     /// Роль игрока в команде
     /// </summary>
     public string? Role { get; set; }
     
+    /// <summary>
+    /// Пароль участника
+    /// </summary>
+    public string? Password { get; set; }
+    
+    /// <summary>
+    /// Образовательное учебное заведение участника
+    /// </summary>
+    public string? University { get; set; }
+    
+    /// <summary>
+    /// Дата рождения участника
+    /// </summary>
+    public DateTime DateOfBirth { get; set; }
 }
